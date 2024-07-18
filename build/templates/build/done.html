@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'build/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'build/style.css' %}">
+    <title>TEDxYouth@LPHS</title>
+</head>
+
+<body>
+    <div class="d-flex align-items-center pt-4 justify-content-center justify-content-md-start">
+        <img class="px-4" src="{% static 'build/tedxlphs.png' %}" alt="TEDx Logo">
+    </div>
+
+    <span class="text-white d-flex justify-content-start align-items-start m-4 p-4 flex-column border rounded">Your seats have been successfully booked! An e-ticket containing all the details will soon arrive on your registered email. We extend our heartfelt gratitude and eagerly anticipate your presence.</span>
+
+    <footer class="d-flex flex-column mt-5 p-2 px-4 h5 align-items-start text-white border-top border-secondary">
+        <span class="col-12 my-2 order-last ms-2 order-md-first hidden opacity-100 typewriter">
+            <span></span>
+        </span>
+        <span class="col-12 h3 my-2">
+            <a href="https://www.instagram.com/tedxlphs/" target="_blank"><i id="instagram" class="bi bi-instagram px-2"></i></a>
+            <a href="https://www.facebook.com/lilavatibaipodarschool/" target="_blank"><i id="fb" class="bi bi-facebook px-2"></i></a>
+            <a href="https://www.youtube.com/c/LPHSicse" target="_blank"><i id="youtube" class="bi bi-youtube px-2"></i></a>
+        </span>
+        <span class="col-12 ms-2 my-2 fw-light">Ideas worth spreading.</span>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{% static 'build/main.js' %}"></script>
+</body>
