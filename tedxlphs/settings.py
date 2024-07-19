@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_i33j-fmq&w14+5q(#pt*iqd-^ak!ea7prqoyf7*yzg_+3+a9-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tedxyouth-env.eba-dmms9gm2.ap-south-1.elasticbeanstalk.com', '*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -142,3 +142,17 @@ UNFOLD = {
         "dark": lambda request: static("build/logo.png")
     },
 }
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+AWS_ACCESS_KEY_ID = 'AKIAZIGVPMTWASNWVQUZ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'tedxlphs'
+AWS_QUERYSTRING_AUTH = False
