@@ -186,14 +186,3 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
-
-var i = 0;
-var txt = 'Made with ❤️ by Team TEDxLPHS';
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.querySelector(".typewriter > span").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, 75);
-  }
-}

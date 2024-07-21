@@ -14,15 +14,15 @@
 </head>
 
 <body>
-    <div class="d-flex fadeto align-items-center pt-4 justify-content-start">
-        <img class="px-4" src="{% static 'build/tedxlphs.png' %}" alt="TEDxLPHS Logo">
+    <div class="d-flex fadeto align-items-center py-3 justify-content-start" style="background-color: black;" id="ni">
+        <img class="ps-5" src="{% static 'build/tedxlphs.png' %}" alt="TEDxLPHS Logo">
     </div>
 
     <div id="greet" class="d-flex align-items-center justify-content-lg-center justify-content-evenly flex-column">
         <img src="{% static 'build/ted.png' %}" alt="TED logo">
     </div>
     
-    <form method="POST" enctype="multipart/form-data" action="" id="tedx_form">
+    <form method="POST" enctype="multipart/form-data" action="" id="tedx_form" class="d-flex justify-content-center">
         <div class="modal fade" id="modal-pay" role="dialog" tabindex="-1" aria-labelledby="payModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -63,7 +63,7 @@
 
         <div class="modal fade" id="modal-seats" role="dialog" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable bg-danger modal-xl overflow-visible">
-                <div class="modal-content">
+                <div class="modal-content" style="border-radius: 32px;">
                     <div class="modal-header justify-content-center h3 text-white border-3">
                         <span>STAGE</span>
                     </div>
@@ -288,13 +288,15 @@
             </div>
         </div>
 
-        <div class ="fadeto2 text-white d-flex justify-content-start align-items-start m-4 p-4 flex-column border rounded">
+        <div class ="fadeto2 text-white d-flex flex-wrap justify-content-center align-items-center flex-column">
             {% csrf_token %}
-            <div class="pb-2">
-                <span class="col-md-12 fw-bold display-6">Register for TEDxYOUTH@LPHS</span>
-            </div>
-            <div class="d-flex flex-md-row flex-column-reverse justify-content-md-start justify-content-center mt-4">
-                <div class="col-md-8 col-12">
+            <div class="d-flex m-3 mt-0 p-3 flex-md-row flex-column-reverse justify-content-center">
+                <div id="bga" class="col-md-12 col-12 p-3 pb-5 px-md-5" style="border-radius: 32px;">
+                    <div class="row mb-md-0 mb-4">
+                        <div class="col-12 text-center">
+                            <span id="fto" class="fw-bold text-center">REGISTER FOR TEDxYOUTH@LPHS</span>
+                        </div>
+                    </div>
                     <div class="row g-3 d-none" id="error">
                         <div class="col-md-12 mt-0">
                             <div class="bg-danger text-white p-2 my-2 rounded">
@@ -302,63 +304,53 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 mb-3">
+                        <div class="col-6 mb-3 inp">
                             <label for="FirstName" class="form-label">First Name</label>
                             {{ form.first_name }}    
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-6 mb-3 inp">
                             <label for="LastName" class="form-label">Last Name</label>
                             {{ form.last_name }}    
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-5 col-12 mb-3">
+                        <div class="col-md-6 col-12 mb-3 inp">
                             <label for="Contact" class="form-label">Contact</label>
                             {{ form.contact_no }}
                         </div>
-                        <div class="col-md-7 col-12 mb-3">
+                        <div class="col-md-6 col-12 mb-3 inp">
                             <label for="Email" class="form-label">Email address</label>
                             {{ form.email }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2 col-3 mb-3">
+                        <div class="col-md-3 col-6 mb-3 inp">
                             <label for="Age" class="form-label">Age</label>
                             {{ form.age }}
                         </div>
-                        <div class="col-md-3 col-12 mb-3">
+                        <div class="col-md-3 col-6 mb-3 inp">
                             <label for="Qty" class="form-label">Quantity</label>
                             {{ form.quantity }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="w-100 mt-3 form-label"></a></label>
+                            <button type="button" class="btn btn-md btn-danger" disabled="disabled" id="pos">Next</button>
                         </div>
                         <div class="d-none">
                             <label for="Seats" class="form-label">Seat Position</label>
                             {{ form.seats }}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="d-grid gap-2 col-md-6 mt-md-2 mt-4">
-                            <button type="button" class="btn btn-md btn-danger" disabled="disabled" id="pos">Next<i class="bi bi-chevron-right ms-2"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 ms-md-5 mb-5 mb-md-0 mx-md-2 flex-shrink-0">
-                    <img class="img-fluid" src="{% static 'build/wtk.png' %}" alt="Walk the Talk">
                 </div>
             </div>
         </div>
     </form>
 
-    <footer class="d-flex flex-column flex-md-row mt-5 p-2 px-4 h5 align-items-start align-items-md-center text-white border-top border-secondary justify-content-evenly">
-        <span class="col-12 col-md-4 my-2 ms-md-4 ms-2 me-md-0 order-md-first text-md-start hidden opacity-100 typewriter">
-            <span></span>
-        </span>
-        <span class="col-12 col-md-4 h3 my-2 text-md-center">
-            <a href="https://www.instagram.com/tedxlphs/" target="_blank"><i id="instagram" class="bi bi-instagram px-2"></i></a>
-            <a href="https://www.facebook.com/lilavatibaipodarschool/" target="_blank"><i id="fb" class="bi bi-facebook px-2"></i></a>
-            <a href="https://www.youtube.com/c/LPHSicse" target="_blank"><i id="youtube" class="bi bi-youtube px-2"></i></a>
-        </span>
-        <span class="col-12 col-md-4 mx-md-4 my-2 text-md-end me-md-4 ms-md-0 ms-2 fw-light">Ideas worth spreading.</span>
-    </footer>
+    <div class="col-12 col-lg-12 p-1" style="background-color: #320109;">
+        <marquee class="fs-6 p-1 pt-2" style="color: #f45973;">
+            Made with ❤️ by TEDxLPHS &emsp; TEDxLPHS দ্বারা ❤️ দিয়ে তৈরি &emsp; TEDxLPHS ❤️ ഉപയോഗിച്ച് നിർമ്മിച്ചത് &emsp; TEDxLPHS ద్వారా ❤️తో రూపొందించబడింది &emsp; Réalisé avec ❤️ par TEDxLPHS &emsp; TEDxLPHS மூலம் ❤️ கொண்டு உருவாக்கப்பட்டது &emsp; TEDxLPHS が ❤️ で作成 &emsp; TEDxLPHS द्वारे ❤️ सह बनवले &emsp; TEDxLPHS द्वारा ❤️ के साथ बनाया गया &emsp; TEDxLPHS દ્વારા ❤️ સાથે બનાવેલ
+        </marquee>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
