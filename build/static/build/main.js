@@ -71,9 +71,10 @@ $(document).ready(function(){
     }
   });
 
-  $('#FirstName, #LastName, #Contact, #Email, #Age, #Qty').bind('keydown change', function() {
+  $('#FirstName, #LastName, #Contact, #Email, #Age, #Qty').on('change textInput input', function() {
     var empty = false;
     $('#FirstName, #LastName, #Contact, #Email, #Age, #Qty').each(function() {
+        console.log($(this).val());
         if ($(this).val() == '') {
             empty = true;
         }
@@ -90,8 +91,9 @@ $(document).ready(function(){
 
   
   $("#s-mb > div > div > button").click(function(){
-    if ($("#s-mb > div > div .btn-light").length < $("#Qty").val() && $(this).hasClass("btn-outline-light")){
-      $(this).toggleClass("btn-outline-light btn-light")
+    if ($("#s-mb > div > div .btn-light").length < $("#Qty").val() && ($(this).hasClass("btn-outline-light") || ($(this).hasClass("sbtn")))){
+      $(this).removeClass("btn-outline-light sbtn")
+      $(this).addClass("btn-light")
       seat_nos.push($(this).parent().parent().attr('id') + $(this).text())
       if ("ABCDEFGHIJ".indexOf($(this).parent().parent().attr('id')) >= 0){
         amt += 800
@@ -102,7 +104,8 @@ $(document).ready(function(){
     }
     else if ($(this).hasClass("btn-light")){
       $("#s-mb > div > div .btn-outline-light").toggleClass("pe-none")
-      $(this).toggleClass("btn-outline-light btn-light")
+      $(this).removeClass("btn-light")
+      $(this).addClass("sbtn")
       seat_nos.pop($(this).parent().parent().attr('id') + $(this).text())
       if ("ABCDEFGHIJ".indexOf($(this).parent().parent().attr('id')) >= 0){
         amt -= 800
