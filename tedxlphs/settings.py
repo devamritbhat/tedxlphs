@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_i33j-fmq&w14+5q(#pt*iqd-^ak!ea7prqoyf7*yzg_+3+a9-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['tedxyouth-lphs-env.eba-dmms9gm2.ap-south-1.elasticbeanstalk.com', '*']
 
@@ -152,7 +152,7 @@ STORAGES = {
     },
 }
 
-AWS_ACCESS_KEY_ID = 'AKIAZIGVPMTWASNWVQUZ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAZIGVPMTWNFNUSDAO'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'tedxlphs'
 AWS_QUERYSTRING_AUTH = False
