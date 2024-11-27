@@ -151,8 +151,3 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
-
-AWS_ACCESS_KEY_ID = 'AKIAZIGVPMTWNFNUSDAO'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'tedxlphs'
-AWS_QUERYSTRING_AUTH = False
